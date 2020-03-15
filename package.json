@@ -1,0 +1,53 @@
+{
+  "name": "time-format-ticks",
+  "version": "1.0.0",
+  "main": "dist/index.ts",
+  "types": "dist/index.d.ts",
+  "repository": "https://github.com/ilariaventurini/time-format-ticks.git",
+  "author": {
+    "name": "Ilaria Venturini",
+    "email": "venturini.ila@gmail.com"
+  },
+  "license": "MIT",
+  "private": true,
+  "keywords": [
+    "d3",
+    "ticks",
+    "time",
+    "axis"
+  ],
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "compile": "tsc",
+    "compile-watch": "tsc --watch",
+    "test": "jest --config jestconfig.json",
+    "test-watch": "jest --watch --config jestconfig.json",
+    "coverage-watch": "yarn test --watchAll --coverage",
+    "coverage-interactive-watch": "npx live-server --port=9000 coverage",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepublish": "rm -rf dist/ && tsc",
+    "sanitize": "yarn format && yarn lint",
+    "clean": "rm dist/bundle.js",
+    "start:demo": "parcel demo/index.html",
+    "build-prod:demo": "parcel build demo/index.html"
+  },
+  "devDependencies": {
+    "@types/jest": "^25.1.4",
+    "jest": "^25.1.0",
+    "parcel-bundler": "^1.12.4",
+    "prettier": "^1.19.1",
+    "ts-jest": "^25.2.1",
+    "tslint": "^6.1.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "d3-array": "^2.4.0",
+    "d3-axis": "^1.0.12",
+    "d3-scale": "^3.2.1",
+    "d3-selection": "^1.4.1"
+  }
+}
