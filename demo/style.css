@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400&display=swap');
 
 html {
@@ -26,7 +25,8 @@ body {
 }
 
 .container-example {
-  margin-top: 30px;
+  padding: 10px;
+  margin-top: 10px;
 }
 
 .container {
@@ -34,15 +34,12 @@ body {
 }
 
 .container-title {
-  border-bottom: 1px solid black;
+  /* border-bottom: 1px solid black; */
   font-weight: bold;
+  margin-bottom: 5px;
 }
 
 .title {
   font-weight: bold;
-  font-size: 20px;
-}
-
-.content {
-  padding: 5 5 0 5;
+  font-size: 22px;
 }
