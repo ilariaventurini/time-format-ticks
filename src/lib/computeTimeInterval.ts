@@ -8,13 +8,13 @@ export function computeTimeIntervalName(ticks: Tick[]): TimeInterval {
   if (ticks.length === 1) {
     return TIME_INTERVALS[0][0] // '15seconds'
   }
-  const differences = consecutiveDifferences(ticks)
+  const differences = getConsecutiveDifferences(ticks)
   const minDifference = Math.min(...differences)
   return closestTimeIntervalName(minDifference)
 }
 
 // Find the differences between consecutive numbers in an array
-function consecutiveDifferences(elements: Tick[]): number[] {
+function getConsecutiveDifferences(elements: Tick[]): number[] {
   return elements.slice(1).map((elem, i) => elem - elements[i])
 }
 

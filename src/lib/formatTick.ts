@@ -54,25 +54,25 @@ function getLocale(localeCode: LocaleCode): Locale {
 
 // Return true if the day of the month (D = 1-31) is changed, false otherwise
 function isDayOfMonthChanged(timestamp: Tick): boolean {
-  const { s, m, H } = timestampToFormatTime(timestamp)
+  const { s, m, H } = getTimeformats(timestamp)
   return H === 0 && m === 0 && s === 0
 }
 
 // Return true if the month (M = 1-12) is changed, false otherwise
 function isMonthChanged(timestamp: Tick): boolean {
-  const { d, s, m, H } = timestampToFormatTime(timestamp)
+  const { d, s, m, H } = getTimeformats(timestamp)
   return d === 1 && H === 0 && m === 0 && s === 0
 }
 
 // Return true if the year (YYYY) is changed, false otherwise
 function isYearChanged(timestamp: Tick): boolean {
-  const { M, d, s, m, H } = timestampToFormatTime(timestamp)
+  const { M, d, s, m, H } = getTimeformats(timestamp)
   return M === 1 && d === 1 && H === 0 && m === 0 && s === 0
 }
 
 // Given a timestamp, return an object of useful time formats
 // Use Unicode date field symbol (https://www.unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table)
-export function timestampToFormatTime(timestamp: Tick) {
+export function getTimeformats(timestamp: Tick) {
   const date = new Date(timestamp)
   return {
     M: date.getMonth() + 1, // month: 1-12

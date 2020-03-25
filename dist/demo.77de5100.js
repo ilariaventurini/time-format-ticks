@@ -9585,13 +9585,13 @@ function computeTimeIntervalName(ticks) {
     return _constants.TIME_INTERVALS[0][0]; // '15seconds'
   }
 
-  var differences = consecutiveDifferences(ticks);
+  var differences = getConsecutiveDifferences(ticks);
   var minDifference = Math.min.apply(Math, differences);
   return closestTimeIntervalName(minDifference);
 } // Find the differences between consecutive numbers in an array
 
 
-function consecutiveDifferences(elements) {
+function getConsecutiveDifferences(elements) {
   return elements.slice(1).map(function (elem, i) {
     return elem - elements[i];
   });
@@ -76739,7 +76739,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.formatTick = formatTick;
 exports.isTickPrimary = isTickPrimary;
-exports.timestampToFormatTime = timestampToFormatTime;
+exports.getTimeformats = getTimeformats;
 
 var _lodash = require("lodash");
 
@@ -76827,7 +76827,7 @@ function getLocale(localeCode) {
 
 
 function isDayOfMonthChanged(timestamp) {
-  var _a = timestampToFormatTime(timestamp),
+  var _a = getTimeformats(timestamp),
       s = _a.s,
       m = _a.m,
       H = _a.H;
@@ -76837,7 +76837,7 @@ function isDayOfMonthChanged(timestamp) {
 
 
 function isMonthChanged(timestamp) {
-  var _a = timestampToFormatTime(timestamp),
+  var _a = getTimeformats(timestamp),
       d = _a.d,
       s = _a.s,
       m = _a.m,
@@ -76848,7 +76848,7 @@ function isMonthChanged(timestamp) {
 
 
 function isYearChanged(timestamp) {
-  var _a = timestampToFormatTime(timestamp),
+  var _a = getTimeformats(timestamp),
       M = _a.M,
       d = _a.d,
       s = _a.s,
@@ -76860,7 +76860,7 @@ function isYearChanged(timestamp) {
 // Use Unicode date field symbol (https://www.unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table)
 
 
-function timestampToFormatTime(timestamp) {
+function getTimeformats(timestamp) {
   var date = new Date(timestamp);
   return {
     M: date.getMonth() + 1,
