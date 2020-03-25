@@ -1,11 +1,10 @@
 export declare type Formatter = ((t: number, i: number) => string);
 export declare type Tick = number;
 export declare type FormattedTick = string;
-export declare type LocaleCode = string;
 export interface Options {
     showDayName?: boolean;
     formats?: Formats;
-    localeCode?: LocaleCode;
+    localeObject?: Locale;
 }
 export interface Formats {
     '15seconds'?: TickFormats;

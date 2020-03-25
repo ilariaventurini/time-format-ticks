@@ -1,4 +1,5 @@
-import { Options } from "./types"
+import { Options } from './types'
+import enUSLocaleObject from 'date-fns/locale/en-US/index'
 
 type name = string
 type ms = number
@@ -17,7 +18,7 @@ export const TIME_INTERVALS: TimeInterval = [
 
 export const defaultOptions: Required<Options> = {
   showDayName: false,
-  localeCode: 'en-US',
+  localeObject: enUSLocaleObject,
   formats: {
     '15seconds': { primary: 'MMM d, pp', secondary: 'pp' },
     'minute': { primary: 'MMM d, p', secondary: 'p' },

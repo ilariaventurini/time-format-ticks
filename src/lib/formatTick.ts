@@ -1,19 +1,15 @@
-import { Options, Tick, FormattedTick, TimeInterval, TickFormats, LocaleCode } from './types'
+import { Options, Tick, FormattedTick, TimeInterval, TickFormats } from './types'
 import { get } from 'lodash'
 import { format } from 'date-fns'
-import * as locales from 'date-fns/locale'
-
-const codes = Object.values(locales).map(locale => locale['code']) as LocaleCode[]
 
 // Return the formatted current tick
 export function formatTick(tick: Tick, tickIndex: number, interval: TimeInterval, options: Required<Options>): FormattedTick {
-  const { showDayName, localeCode, formats } = options
+  const { showDayName, localeObject, formats } = options
   // this is necessary because weekly is not a really time interval, is only a way to show day
   const intervalConsideringAlsoShowDayNameOption = interval === 'daily' && showDayName ? 'weekly' : interval
   const tickFormats: Required<TickFormats> = get(formats, intervalConsideringAlsoShowDayNameOption)
   const formatString = isTickPrimary(tick, tickIndex, interval, showDayName) ? tickFormats.primary : tickFormats.secondary
-  const locale = getLocale(localeCode)
-  return format(new Date(tick), formatString, { locale })
+  return format(new Date(tick), formatString, { locale: localeObject })
 }
 
 // Return true if the tick is a primary tick, false otherwise
@@ -38,18 +34,6 @@ export function isTickPrimary(tick: Tick, tickIndex: number, interval: TimeInter
     case 'yearly': return false
     default: throw new Error(`${interval} is not a valid time interval.`)
   }
-}
-
-// The accepted formats of localeCode are ll and ll-CC (where l stands for language, C stands for Country)
-function getLocale(localeCode: LocaleCode): Locale {
-  // locales is an object whose keys format is ll or llCC
-  // each locale is an object whose code value format is ll or ll-CC
-  const localeCodeWithoutDash = localeCode.replace(/-/g, '')
-  const foundLocale: Locale = get(locales, localeCodeWithoutDash)
-  if (!foundLocale) {
-    throw new Error(`Locale with code '${localeCode}' not found. Avaible codes are: ${codes}.`)
-  }
-  return foundLocale
 }
 
 // Return true if the day of the month (D = 1-31) is changed, false otherwise

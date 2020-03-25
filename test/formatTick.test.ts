@@ -1,3 +1,4 @@
+import frLocaleObject from 'date-fns/locale/fr/index'
 import { computeTimeIntervalName } from '../src/lib/computeTimeInterval'
 import { FormattedTick, Tick, TimeInterval, Options } from '../src/lib/types'
 import { formatTick } from '../src/lib/formatTick'
@@ -203,7 +204,7 @@ it('should format ticks with time interval monthly', () => {
     getTimestampsAndFormattedTicks(datasetCustomFormats)
   const timeIntervalCustomFormats = computeTimeIntervalName(timestampsCustomFormats)
   expect(timeIntervalCustomFormats).toEqual('monthly')
-  const timeScaleCustomOptions = { ...defaultOptions, localeCode: 'fr' }
+  const timeScaleCustomOptions = { ...defaultOptions, localeObject: frLocaleObject }
   expect(format(timestampsCustomFormats, timeIntervalCustomFormats, timeScaleCustomOptions)).toEqual(formattedTicksCustomFormats)
 })
 

@@ -1,3 +1,4 @@
+import frLocaleObject from 'date-fns/locale/fr/index'
 import { select } from 'd3-selection'
 import { createExample } from './createExample'
 
@@ -130,7 +131,7 @@ createExample(root, 'monthly-with-custom-formats', [
   new Date(2020, 0),
   new Date(2020, 1),
   new Date(2020, 2),
-], { localeCode: 'fr' })
+], { localeObject: frLocaleObject })
 
 createExample(root, 'quarterly', [
   new Date(2017, 0),
