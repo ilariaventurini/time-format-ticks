@@ -16,14 +16,6 @@ body {
   width: 100%;
   position: fixed;
 }
-
-.code {
-  font-family: 'Source Code Pro', monospace;
-  font-size: 10px;
-  font-weight: 200;
-  background-color: #efefef;
-}
-
 .container-example {
   padding: 10px;
   margin-top: 10px;
@@ -34,7 +26,6 @@ body {
 }
 
 .container-title {
-  /* border-bottom: 1px solid black; */
   font-weight: bold;
   margin-bottom: 5px;
 }
@@ -42,6 +33,12 @@ body {
 .title {
   font-weight: bold;
   font-size: 22px;
+}
+
+.code {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 10px;
+  font-weight: 200;
 }
 
 

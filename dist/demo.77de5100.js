@@ -76945,13 +76945,13 @@ var root = (0, _d3Selection.select)('#app');
 var width = document.getElementById('app').clientWidth - 10;
 var dimensions = {
   width: width,
-  height: 50
+  height: 90
 };
 var margins = {
-  top: 20,
-  right: 50,
-  bottom: 20,
-  left: 50
+  top: 10,
+  right: 40,
+  bottom: 0,
+  left: 60
 };
 
 function createExample(holder, title, dataset, options) {
@@ -76959,20 +76959,20 @@ function createExample(holder, title, dataset, options) {
       height = dimensions.height;
   var domain = (0, _d3Array.extent)(dataset);
   var range = [0, width - margins.left - margins.right];
-  var scaleX = (0, _d3Scale.scaleTime)().domain(domain).range(range);
-  var axisGenerator = (0, _d3Axis.axisBottom)(scaleX); // get and set ticks formatter
+  var scale = (0, _d3Scale.scaleTime)().domain(domain).range(range);
+  var axisGenerator = (0, _d3Axis.axisBottom)(scale); // get and set ticks formatter
 
   var ticks = dataset.map(function (d) {
     return d.getTime();
   });
   var timeInterval = (0, _computeTimeInterval.computeTimeIntervalName)(ticks);
   var formatter = (0, _index.getFormatter)(ticks, options);
-  axisGenerator.tickFormat(formatter);
-  var container = "\n  <div id=\"container-" + title + "\" class=\"container-example\" style=\"width: " + width + "; background-color: #ffffff\">\n    <div class=\"title\" id=\"title-" + title + "\" style=\"\">\n      " + title + "\n    </div>\n    \n    <div class=\"container\" id=\"dataset-" + title + "\" style=\"\">\n      <div class=\"container-title\" style=\"\">Dataset</div>\n      <div class=\"code content\" style=\"\">\n        " + dataset.map(function (d, i) {
-    return "<div class=\"\" style=\"width:" + width + "px\">" + d.toISOString() + "</div>";
-  }).join('') + "\n      </div>\n    </div>\n\n    <div class=\"container\" id=\"options-" + title + "\" style=\"\">\n      <div class=\"container-title\" style=\"\">Options</div>\n      <div class=\"code content\" style=\"\">\n        " + (options ? JSON.stringify(options, null, 2) : '/') + "\n      </div>\n    </div>\n    \n    <div class=\"container\" id=\"time-interval-" + title + "\" style=\"\">\n      <div class=\"container-title\" style=\"\">Time interval</div>\n      <div class=\"content\" style=\"\">\n        " + timeInterval + "\n      </div>\n    </div>\n    \n    <div class=\"container\" id=\"axis-" + title + "\" style=\"\">\n      <div class=\"container-title\" style=\"\">Result</div>\n    </div>\n  </div>\n";
+  axisGenerator.tickFormat(formatter).ticks(10);
+  var container = "\n  <div id=\"container-" + title + "\" class=\"container-example\" style=\"width: " + width + "\">\n    <div class=\"title\" id=\"title-" + title + "\">\n      " + title + "\n    </div>\n    \n    <div class=\"container\" id=\"dataset-" + title + "\">\n      <div class=\"container-title\">Dataset</div>\n      <div class=\"code content\">\n        " + dataset.map(function (d) {
+    return "<div class=\"\" style=\"width:" + width + "\">" + d.toISOString() + "</div>";
+  }).join('') + "\n      </div>\n    </div>\n\n    <div class=\"container\" id=\"options-" + title + "\">\n      <div class=\"container-title\">Options</div>\n      <div class=\"code content\">\n        " + (options ? JSON.stringify(options, null, 2) : '/') + "\n      </div>\n    </div>\n    \n    <div class=\"container\" id=\"axis-" + title + "\">\n      <div class=\"container-title\">Result</div>\n      <div class=\"content\"></div>\n    </div>\n  </div>\n";
   holder.append('div').html(container);
-  holder.select("#axis-" + title).append('svg').attr('width', width).attr('height', height).append('g').attr('transform', "translate(" + margins.left + ", " + margins.top + ")").append('g').attr('width', width - margins.left - margins.right).attr('height', height - margins.top - margins.bottom).attr('transform', "translate(0, " + (height - margins.top - margins.bottom) + ")").call(axisGenerator);
+  holder.select("#axis-" + title + " > div.content").append('svg').attr('width', width).attr('height', height).append('g').attr('transform', "translate(" + margins.left + ", " + margins.top + ")").append('g').attr('width', width - margins.left - margins.right).attr('height', height - margins.top - margins.bottom).call(axisGenerator).selectAll("text").attr("transform", "rotate(-45)").attr("text-anchor", "end");
 }
 },{"tachyons":"../node_modules/tachyons/css/tachyons.css","tachyons-extra":"../node_modules/tachyons-extra/tachyons-extra.css","style.css":"../node_modules/style.css/style.css","d3-scale":"../node_modules/d3-scale/src/index.js","d3-axis":"../node_modules/d3-axis/src/index.js","d3-array":"../node_modules/d3-array/src/index.js","d3-selection":"../node_modules/d3-selection/src/index.js","../src/index":"../src/index.ts","../src/lib/computeTimeInterval":"../src/lib/computeTimeInterval.ts"}],"index.ts":[function(require,module,exports) {
 "use strict";
@@ -76982,7 +76982,6 @@ var _d3Selection = require("d3-selection");
 var _createExample = require("./createExample");
 
 var root = (0, _d3Selection.select)('#app');
-var options = undefined;
 (0, _createExample.createExample)(root, '15seconds', [new Date(2020, 11, 10, 23, 59, 15), new Date(2020, 11, 10, 23, 59, 30), new Date(2020, 11, 10, 23, 59, 45), new Date(2020, 11, 11, 0, 0, 0), new Date(2020, 11, 11, 0, 0, 15), new Date(2020, 11, 11, 0, 0, 30), new Date(2020, 11, 11, 0, 0, 45)]);
 (0, _createExample.createExample)(root, 'minute', [new Date(2020, 4, 21, 23, 47, 0), new Date(2020, 4, 21, 23, 58, 0), new Date(2020, 4, 21, 23, 59, 0), new Date(2020, 4, 22, 0, 0, 0), new Date(2020, 4, 22, 0, 1, 0), new Date(2020, 4, 22, 0, 2, 0), new Date(2020, 4, 22, 0, 3, 0), new Date(2020, 4, 22, 11, 58, 0), new Date(2020, 4, 22, 11, 59, 0), new Date(2020, 4, 22, 12, 0, 0), new Date(2020, 4, 22, 12, 1, 0, 0), new Date(2020, 4, 22, 12, 2, 0)]);
 (0, _createExample.createExample)(root, '30minutes', [new Date(2020, 11, 10, 22, 30), new Date(2020, 11, 10, 23, 0), new Date(2020, 11, 10, 23, 30), new Date(2020, 11, 11, 0, 0), new Date(2020, 11, 11, 0, 30), new Date(2020, 11, 11, 1, 0), new Date(2020, 11, 11, 1, 30)]);
@@ -77033,7 +77032,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53255" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58745" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

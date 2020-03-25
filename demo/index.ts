@@ -3,8 +3,6 @@ import { createExample } from './createExample'
 
 const root = select('#app')
 
-const options = undefined
-
 createExample(root, '15seconds', [
   new Date(2020, 11, 10, 23, 59, 15),
   new Date(2020, 11, 10, 23, 59, 30),
