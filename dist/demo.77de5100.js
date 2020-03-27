@@ -47190,8 +47190,6 @@ var _d3Selection = require("d3-selection");
 
 var _index = require("../src/index");
 
-var _computeTimeInterval = require("../src/lib/computeTimeInterval");
-
 var root = (0, _d3Selection.select)('#app');
 var width = document.getElementById('app').clientWidth - 10;
 var dimensions = {
@@ -47216,7 +47214,6 @@ function createExample(holder, title, dataset, options) {
   var ticks = dataset.map(function (d) {
     return d.getTime();
   });
-  var timeInterval = (0, _computeTimeInterval.computeTimeIntervalName)(ticks);
   var formatter = (0, _index.getFormatter)(ticks, options);
   axisGenerator.tickFormat(formatter).ticks(10);
   var container = "\n  <div id=\"container-" + title + "\" class=\"container-example\" style=\"width: " + width + "\">\n    <div class=\"title\" id=\"title-" + title + "\">\n      " + title + "\n    </div>\n    \n    <div class=\"container\" id=\"dataset-" + title + "\">\n      <div class=\"container-title\">Dataset</div>\n      <div class=\"code content\">\n        " + dataset.map(function (d) {
@@ -47225,7 +47222,7 @@ function createExample(holder, title, dataset, options) {
   holder.append('div').html(container);
   holder.select("#axis-" + title + " > div.content").append('svg').attr('width', width).attr('height', height).append('g').attr('transform', "translate(" + margins.left + ", " + margins.top + ")").append('g').attr('width', width - margins.left - margins.right).attr('height', height - margins.top - margins.bottom).call(axisGenerator).selectAll("text").attr("transform", "rotate(-45)").attr("text-anchor", "end");
 }
-},{"tachyons":"../node_modules/tachyons/css/tachyons.css","tachyons-extra":"../node_modules/tachyons-extra/tachyons-extra.css","style.css":"../node_modules/style.css/style.css","d3-scale":"../node_modules/d3-scale/src/index.js","d3-axis":"../node_modules/d3-axis/src/index.js","d3-array":"../node_modules/d3-array/src/index.js","d3-selection":"../node_modules/d3-selection/src/index.js","../src/index":"../src/index.ts","../src/lib/computeTimeInterval":"../src/lib/computeTimeInterval.ts"}],"index.ts":[function(require,module,exports) {
+},{"tachyons":"../node_modules/tachyons/css/tachyons.css","tachyons-extra":"../node_modules/tachyons-extra/tachyons-extra.css","style.css":"../node_modules/style.css/style.css","d3-scale":"../node_modules/d3-scale/src/index.js","d3-axis":"../node_modules/d3-axis/src/index.js","d3-array":"../node_modules/d3-array/src/index.js","d3-selection":"../node_modules/d3-selection/src/index.js","../src/index":"../src/index.ts"}],"index.ts":[function(require,module,exports) {
 "use strict";
 
 var _index = _interopRequireDefault(require("date-fns/locale/fr/index"));
@@ -47287,7 +47284,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58745" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50221" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

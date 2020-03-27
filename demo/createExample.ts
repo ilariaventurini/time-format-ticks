@@ -23,7 +23,6 @@ export function createExample(holder: any, title: string, dataset: any, options?
 
   // get and set ticks formatter
   const ticks = dataset.map(d => d.getTime())
-  const timeInterval = computeTimeIntervalName(ticks)
   const formatter = getFormatter(ticks, options)
   axisGenerator
     .tickFormat(formatter)
