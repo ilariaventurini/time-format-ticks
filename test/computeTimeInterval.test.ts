@@ -149,3 +149,10 @@ it('should compute time interval for yearly', () => {
   const timeInterval = computeTimeIntervalName(ticks)
   expect(timeInterval).toEqual('yearly')
 })
+
+it('single tick: should compute time interval for 15seconds', () => {
+  const ticks = [new Date(1977, 0)].map(t => t.getTime())
+
+  const timeInterval = computeTimeIntervalName(ticks)
+  expect(timeInterval).toEqual('15seconds')
+})
