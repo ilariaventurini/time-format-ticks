@@ -249,3 +249,17 @@ it('should format ticks with time interval yearly', () => {
   expect(timeInterval).toEqual('yearly')
   expect(format(timestamps, timeInterval, defaultOptions)).toEqual(formattedTicks)
 })
+
+it('should throw an error since that time interval is not valid', () => {
+  const dataset = [
+    new Date(2020, 11, 10, 23, 59, 15),
+    new Date(2020, 11, 10, 23, 59, 30),
+    new Date(2020, 11, 10, 23, 59, 45),
+    new Date(2020, 11, 11, 0, 0, 0),
+    new Date(2020, 11, 11, 0, 0, 15),
+    new Date(2020, 11, 11, 0, 0, 30),
+    new Date(2020, 11, 11, 0, 0, 45)
+  ]
+  const timestamps = dataset.map(d => d.getTime())
+  expect(() => format(timestamps, 'ciao', defaultOptions)).toThrow()
+})
