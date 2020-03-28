@@ -47164,9 +47164,25 @@ Object.defineProperty(exports, "getFormatter", {
     return _getFormatter.getFormatter;
   }
 });
+Object.defineProperty(exports, "isTickPrimary", {
+  enumerable: true,
+  get: function () {
+    return _formatTick.isTickPrimary;
+  }
+});
+Object.defineProperty(exports, "computeTimeIntervalName", {
+  enumerable: true,
+  get: function () {
+    return _computeTimeInterval.computeTimeIntervalName;
+  }
+});
 
 var _getFormatter = require("./lib/getFormatter");
-},{"./lib/getFormatter":"../src/lib/getFormatter.ts"}],"createExample.ts":[function(require,module,exports) {
+
+var _formatTick = require("./lib/formatTick");
+
+var _computeTimeInterval = require("./lib/computeTimeInterval");
+},{"./lib/getFormatter":"../src/lib/getFormatter.ts","./lib/formatTick":"../src/lib/formatTick.ts","./lib/computeTimeInterval":"../src/lib/computeTimeInterval.ts"}],"createExample.ts":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
