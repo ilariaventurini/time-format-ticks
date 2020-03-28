@@ -32,7 +32,7 @@
     "sanitize": "yarn format && yarn lint",
     "clean": "rm dist/bundle.js",
     "start:demo": "parcel demo/index.html",
-    "build-prod:demo": "parcel build demo/index.html"
+    "build": "parcel build demo/index.html"
   },
   "devDependencies": {
     "@types/jest": "^25.1.4",
