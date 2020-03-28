@@ -4,12 +4,9 @@ import 'style.css'
 import { scaleTime } from 'd3-scale'
 import { axisBottom } from 'd3-axis'
 import { extent } from 'd3-array'
-import { select } from 'd3-selection'
 import { getFormatter } from '../src/index'
-import { computeTimeIntervalName } from '../src/lib/computeTimeInterval'
 import { Options } from '../src/lib/types'
 
-const root = select('#app')
 const width = document.getElementById('app').clientWidth - 10
 const dimensions = { width: width, height: 90 }
 const margins = { top: 10, right: 40, bottom: 0, left: 60 }
