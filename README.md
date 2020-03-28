@@ -201,7 +201,7 @@ Each option value is optional.
     ].map(d => d.getTime())
     const formatter = getFormatter(ticks)
 
-![15seconds]()
+![15seconds](https://raw.githubusercontent.com/ilariaventurini/time-format-ticks/master/assets/15seconds.png?token=AKRICQKYDLSTZS6KLDZZ7WS6P6O5A)
 
 #### minute
 
@@ -221,7 +221,7 @@ Each option value is optional.
     ].map(d => d.getTime())
     const formatter = getFormatter(ticks)
 
-![minute]()
+![minute](https://raw.githubusercontent.com/ilariaventurini/time-format-ticks/master/assets/minute.png?token=AKRICQMU6R3PVAK4HEE2MQS6P6PBA)
 
 #### 30minutes
 
@@ -236,7 +236,7 @@ Each option value is optional.
     ].map(d => d.getTime())
     const formatter = getFormatter(ticks)
 
-![30minutes]()
+![30minutes](https://raw.githubusercontent.com/ilariaventurini/time-format-ticks/master/assets/30minutes.png?token=AKRICQO5QG6EEWNHTA4R2BS6P6O6C)
 
 #### hourly
 
@@ -256,7 +256,7 @@ Each option value is optional.
     ].map(d => d.getTime())
     const formatter = getFormatter(ticks)
 
-![hourly]()
+![hourly](https://raw.githubusercontent.com/ilariaventurini/time-format-ticks/master/assets/hourly.png?token=AKRICQJQEUVQRMQEYNNLHSC6P6PAO)
 
 #### hourly with custom format
 
@@ -277,7 +277,7 @@ Each option value is optional.
     const options = { formats: {'hourly': { primary: 'MMM d, HH:mm', secondary: 'HH:mm' } }
     const formatter = getFormatter(ticks, options)
 
-![hourly custom]()
+![hourly custom](https://raw.githubusercontent.com/ilariaventurini/time-format-ticks/master/assets/hourly%20custom.png?token=AKRICQMWPCKIQW7SXW2OMVK6P6O7U)
 
 #### daily
 
@@ -297,7 +297,7 @@ Each option value is optional.
     ].map(d => d.getTime())
     const formatter = getFormatter(ticks)
 
-![daily]()
+![daily](https://raw.githubusercontent.com/ilariaventurini/time-format-ticks/master/assets/daily.png?token=AKRICQLHZE2N76EYSZVSRXC6P6O62)
 
 #### weekly
 
@@ -317,7 +317,7 @@ Each option value is optional.
     ].map(d => d.getTime())
     const formatter = getFormatter(ticks)
 
-![weekly]()
+![weekly](https://raw.githubusercontent.com/ilariaventurini/time-format-ticks/master/assets/weekly.png?token=AKRICQLC3NCLGDULDEADICK6P6PEG)
 
 #### monthly
 
@@ -337,7 +337,7 @@ Each option value is optional.
     ].map(d => d.getTime())
     const formatter = getFormatter(ticks)
 
-![monthly]()
+![monthly](https://raw.githubusercontent.com/ilariaventurini/time-format-ticks/master/assets/monthly.png?token=AKRICQOCS5E35PTQQB3F6F26P6PCO)
 
 #### monthly with custom Locale
 
@@ -358,7 +358,7 @@ Each option value is optional.
     const options = { localeObject: frLocaleObject }
     const formatter = getFormatter(ticks, options)
 
-![monthly custom]()
+![monthly custom](https://raw.githubusercontent.com/ilariaventurini/time-format-ticks/master/assets/monthly%20custom.png?token=AKRICQOSDK6HYSIMYBI2YUK6P6PBS)
 
 #### quarterly
 
@@ -398,7 +398,7 @@ Each option value is optional.
     ].map(d => d.getTime())
     const formatter = getFormatter(ticks)
 
-![yearly]()
+![yearly](https://raw.githubusercontent.com/ilariaventurini/time-format-ticks/master/assets/yearly.png?token=AKRICQJTULTLPGB3DZFOWTS6P6PFA)
 
 ## Demo page
 
@@ -459,7 +459,7 @@ Params are:
 
 This function is useful if you want, for example, set a different style to primary and secondary ticks:
 
-![15secondsRed](https://raw.githubusercontent.com/ilariaventurini/time-format-ticks/master/assets/15secondsRed.png?token=AKRICQMZFJVQUVEPRAKX47S6P6HJQ)
+![15secondsRed](https://raw.githubusercontent.com/ilariaventurini/time-format-ticks/master/assets/15secondsRed.png?token=AKRICQKCIZ4VE5X52OP5NPC6P6OHS)
 
 ## Example
 
