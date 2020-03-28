@@ -64,7 +64,7 @@ export function createExample(holder: any, title: string, dataset: any, options?
     .attr('width', width - margins.left - margins.right)
     .attr('height', height - margins.top - margins.bottom)
     .call(axisGenerator)
-    .selectAll("text")
-    .attr("transform", "rotate(-45)")
-    .attr("text-anchor", "end")
+    .selectAll('text')
+    .attr('transform', 'rotate(-45)')
+    .attr('text-anchor', 'end')
 }
