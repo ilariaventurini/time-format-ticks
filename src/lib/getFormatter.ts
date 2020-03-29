@@ -9,7 +9,7 @@ export function getFormatter(ticks: Tick[], options?: Options): Formatter {
     throw new Error(`Ticks length is 0.`)
   }
   // merge the default option values with the ones inserted by user
-  const defaultedOptions = merge(options, defaultOptions)
+  const defaultedOptions = merge({}, defaultOptions, options)
   const timeInterval = computeTimeIntervalName(ticks)
   const formatter = (t: number, i: number) => formatTick(t, i, timeInterval, defaultedOptions)
   return formatter
