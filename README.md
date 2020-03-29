@@ -156,19 +156,23 @@ All of those things are possible using the `Options` object.
 
 If you prefer to show hours using 24h and not 12h as default, you can descbribe the formats in this way:
 
-    const options = {
-      formats: {
-        'hourly': { primary: 'MMM d, HH:mm', secondary: 'HH:mm' },
-      }
-    }
+```js
+const options = {
+  formats: {
+    hourly: { primary: 'MMM d, HH:mm', secondary: 'HH:mm' },
+  },
+}
+```
 
 If you prefer to show years as 2-digit instead of 4 for _yearly_ time interval:
 
-    const options = {
-      formats: {
-        'yearly': { primary: 'yy', secondary: 'yy' },
-      }
-    }
+```js
+const options = {
+  formats: {
+    yearly: { primary: 'yy', secondary: 'yy' },
+  },
+}
+```
 
 An infinte number of combinations are possible, the important thing is to use the [Unicode Technical Standard #35](https://www.unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table).
 
@@ -190,215 +194,239 @@ Each option value is optional.
 
 #### 15seconds
 
-    const ticks = [
-      new Date(2020, 11, 10, 23, 59, 15),
-      new Date(2020, 11, 10, 23, 59, 30),
-      new Date(2020, 11, 10, 23, 59, 45),
-      new Date(2020, 11, 11, 0, 0, 0),
-      new Date(2020, 11, 11, 0, 0, 15),
-      new Date(2020, 11, 11, 0, 0, 30),
-      new Date(2020, 11, 11, 0, 0, 45)
-    ].map(d => d.getTime())
-    const formatter = getFormatter(ticks)
+```js
+const ticks = [
+  new Date(2020, 11, 10, 23, 59, 15),
+  new Date(2020, 11, 10, 23, 59, 30),
+  new Date(2020, 11, 10, 23, 59, 45),
+  new Date(2020, 11, 11, 0, 0, 0),
+  new Date(2020, 11, 11, 0, 0, 15),
+  new Date(2020, 11, 11, 0, 0, 30),
+  new Date(2020, 11, 11, 0, 0, 45),
+].map(d => d.getTime())
+const formatter = getFormatter(ticks)
+```
 
-![15seconds](https://raw.githubusercontent.com/ilariaventurini/time-format-ticks/master/assets/15seconds.png?token=AKRICQKYDLSTZS6KLDZZ7WS6P6O5A)
+![15seconds](./assets/15seconds.png?raw=true)
 
 #### minute
 
-    const ticks = [
-      new Date(2020, 4, 21, 23, 47, 0),
-      new Date(2020, 4, 21, 23, 58, 0),
-      new Date(2020, 4, 21, 23, 59, 0),
-      new Date(2020, 4, 22, 0, 0, 0),
-      new Date(2020, 4, 22, 0, 1, 0),
-      new Date(2020, 4, 22, 0, 2, 0),
-      new Date(2020, 4, 22, 0, 3, 0),
-      new Date(2020, 4, 22, 11, 58, 0),
-      new Date(2020, 4, 22, 11, 59, 0),
-      new Date(2020, 4, 22, 12, 0, 0),
-      new Date(2020, 4, 22, 12, 1, 0, 0),
-      new Date(2020, 4, 22, 12, 2, 0)
-    ].map(d => d.getTime())
-    const formatter = getFormatter(ticks)
+```js
+const ticks = [
+  new Date(2020, 4, 21, 23, 47, 0),
+  new Date(2020, 4, 21, 23, 58, 0),
+  new Date(2020, 4, 21, 23, 59, 0),
+  new Date(2020, 4, 22, 0, 0, 0),
+  new Date(2020, 4, 22, 0, 1, 0),
+  new Date(2020, 4, 22, 0, 2, 0),
+  new Date(2020, 4, 22, 0, 3, 0),
+  new Date(2020, 4, 22, 11, 58, 0),
+  new Date(2020, 4, 22, 11, 59, 0),
+  new Date(2020, 4, 22, 12, 0, 0),
+  new Date(2020, 4, 22, 12, 1, 0, 0),
+  new Date(2020, 4, 22, 12, 2, 0),
+].map(d => d.getTime())
+const formatter = getFormatter(ticks)
+```
 
-![minute](https://raw.githubusercontent.com/ilariaventurini/time-format-ticks/master/assets/minute.png?token=AKRICQMU6R3PVAK4HEE2MQS6P6PBA)
+![minute](./assets/minute.png?raw=true)
 
 #### 30minutes
 
-    const ticks = [
-      new Date(2020, 11, 10, 22, 30),
-      new Date(2020, 11, 10, 23, 0),
-      new Date(2020, 11, 10, 23, 30),
-      new Date(2020, 11, 11, 0, 0),
-      new Date(2020, 11, 11, 0, 30),
-      new Date(2020, 11, 11, 1, 0),
-      new Date(2020, 11, 11, 1, 30)
-    ].map(d => d.getTime())
-    const formatter = getFormatter(ticks)
+```js
+const ticks = [
+  new Date(2020, 11, 10, 22, 30),
+  new Date(2020, 11, 10, 23, 0),
+  new Date(2020, 11, 10, 23, 30),
+  new Date(2020, 11, 11, 0, 0),
+  new Date(2020, 11, 11, 0, 30),
+  new Date(2020, 11, 11, 1, 0),
+  new Date(2020, 11, 11, 1, 30),
+].map(d => d.getTime())
+const formatter = getFormatter(ticks)
+```
 
-![30minutes](https://raw.githubusercontent.com/ilariaventurini/time-format-ticks/master/assets/30minutes.png?token=AKRICQO5QG6EEWNHTA4R2BS6P6O6C)
+![30minutes](./assets/30minutes.png?raw=true)
 
 #### hourly
 
-    const ticks = [
-      new Date(2020, 11, 10, 22, 0),
-      new Date(2020, 11, 10, 23, 0),
-      new Date(2020, 11, 11, 0, 0),
-      new Date(2020, 11, 11, 1, 0),
-      new Date(2020, 11, 11, 2, 0),
-      new Date(2020, 11, 11, 3, 0),
-      new Date(2020, 11, 11, 4, 0),
-      new Date(2020, 11, 11, 11, 0),
-      new Date(2020, 11, 11, 12, 0),
-      new Date(2020, 11, 11, 13, 0),
-      new Date(2020, 11, 11, 14, 0),
-      new Date(2020, 11, 11, 15, 0)
-    ].map(d => d.getTime())
-    const formatter = getFormatter(ticks)
+```js
+const ticks = [
+  new Date(2020, 11, 10, 22, 0),
+  new Date(2020, 11, 10, 23, 0),
+  new Date(2020, 11, 11, 0, 0),
+  new Date(2020, 11, 11, 1, 0),
+  new Date(2020, 11, 11, 2, 0),
+  new Date(2020, 11, 11, 3, 0),
+  new Date(2020, 11, 11, 4, 0),
+  new Date(2020, 11, 11, 11, 0),
+  new Date(2020, 11, 11, 12, 0),
+  new Date(2020, 11, 11, 13, 0),
+  new Date(2020, 11, 11, 14, 0),
+  new Date(2020, 11, 11, 15, 0),
+].map(d => d.getTime())
+const formatter = getFormatter(ticks)
+```
 
-![hourly](https://raw.githubusercontent.com/ilariaventurini/time-format-ticks/master/assets/hourly.png?token=AKRICQJQEUVQRMQEYNNLHSC6P6PAO)
+![hourly](./assets/hourly.png?raw=true)
 
 #### hourly with custom format
 
-    const ticks = [
-      new Date(2020, 11, 10, 22, 0),
-      new Date(2020, 11, 10, 23, 0),
-      new Date(2020, 11, 11, 0, 0),
-      new Date(2020, 11, 11, 1, 0),
-      new Date(2020, 11, 11, 2, 0),
-      new Date(2020, 11, 11, 3, 0),
-      new Date(2020, 11, 11, 4, 0),
-      new Date(2020, 11, 11, 11, 0),
-      new Date(2020, 11, 11, 12, 0),
-      new Date(2020, 11, 11, 13, 0),
-      new Date(2020, 11, 11, 14, 0),
-      new Date(2020, 11, 11, 15, 0)
-    ].map(d => d.getTime())
-    const options = { formats: {'hourly': { primary: 'MMM d, HH:mm', secondary: 'HH:mm' } }
-    const formatter = getFormatter(ticks, options)
+```js
+const ticks = [
+  new Date(2020, 11, 10, 22, 0),
+  new Date(2020, 11, 10, 23, 0),
+  new Date(2020, 11, 11, 0, 0),
+  new Date(2020, 11, 11, 1, 0),
+  new Date(2020, 11, 11, 2, 0),
+  new Date(2020, 11, 11, 3, 0),
+  new Date(2020, 11, 11, 4, 0),
+  new Date(2020, 11, 11, 11, 0),
+  new Date(2020, 11, 11, 12, 0),
+  new Date(2020, 11, 11, 13, 0),
+  new Date(2020, 11, 11, 14, 0),
+  new Date(2020, 11, 11, 15, 0)
+].map(d => d.getTime())
+const options = { formats: {'hourly': { primary: 'MMM d, HH:mm', secondary: 'HH:mm' } }
+const formatter = getFormatter(ticks, options)
+```
 
-![hourly custom](https://raw.githubusercontent.com/ilariaventurini/time-format-ticks/master/assets/hourly%20custom.png?token=AKRICQMWPCKIQW7SXW2OMVK6P6O7U)
+![hourly custom](./assets/hourly-custom.png?raw=true)
 
 #### daily
 
-    const ticks = [
-      new Date(2019, 11, 30),
-      new Date(2019, 11, 31),
-      new Date(2020, 0, 1),
-      new Date(2020, 0, 2),
-      new Date(2020, 0, 3),
-      new Date(2020, 0, 4),
-      new Date(2020, 0, 5),
-      new Date(2020, 0, 30),
-      new Date(2020, 0, 31),
-      new Date(2020, 1, 1),
-      new Date(2020, 1, 2),
-      new Date(2020, 1, 3)
-    ].map(d => d.getTime())
-    const formatter = getFormatter(ticks)
+```js
+const ticks = [
+  new Date(2019, 11, 30),
+  new Date(2019, 11, 31),
+  new Date(2020, 0, 1),
+  new Date(2020, 0, 2),
+  new Date(2020, 0, 3),
+  new Date(2020, 0, 4),
+  new Date(2020, 0, 5),
+  new Date(2020, 0, 30),
+  new Date(2020, 0, 31),
+  new Date(2020, 1, 1),
+  new Date(2020, 1, 2),
+  new Date(2020, 1, 3),
+].map(d => d.getTime())
+const formatter = getFormatter(ticks)
+```
 
-![daily](https://raw.githubusercontent.com/ilariaventurini/time-format-ticks/master/assets/daily.png?token=AKRICQLHZE2N76EYSZVSRXC6P6O62)
+![daily](./assets/daily.png?raw=true)
 
 #### weekly
 
-    const ticks = [
-      new Date(2020, 0, 27),
-      new Date(2020, 0, 28),
-      new Date(2020, 0, 29),
-      new Date(2020, 0, 30),
-      new Date(2020, 0, 31),
-      new Date(2020, 1, 1),
-      new Date(2020, 1, 2),
-      new Date(2020, 1, 3),
-      new Date(2020, 1, 4),
-      new Date(2020, 1, 5),
-      new Date(2020, 1, 6),
-      new Date(2020, 1, 7)
-    ].map(d => d.getTime())
-    const formatter = getFormatter(ticks)
+```js
+const ticks = [
+  new Date(2020, 0, 27),
+  new Date(2020, 0, 28),
+  new Date(2020, 0, 29),
+  new Date(2020, 0, 30),
+  new Date(2020, 0, 31),
+  new Date(2020, 1, 1),
+  new Date(2020, 1, 2),
+  new Date(2020, 1, 3),
+  new Date(2020, 1, 4),
+  new Date(2020, 1, 5),
+  new Date(2020, 1, 6),
+  new Date(2020, 1, 7),
+].map(d => d.getTime())
+const formatter = getFormatter(ticks)
+```
 
-![weekly](https://raw.githubusercontent.com/ilariaventurini/time-format-ticks/master/assets/weekly.png?token=AKRICQLC3NCLGDULDEADICK6P6PEG)
+![weekly](./assets/weekly.png?raw=true)
 
 #### monthly
 
-    const ticks = [
-      new Date(2018, 9),
-      new Date(2018, 10),
-      new Date(2018, 11),
-      new Date(2019, 0),
-      new Date(2019, 1),
-      new Date(2019, 2),
-      new Date(2019, 3),
-      new Date(2019, 10),
-      new Date(2019, 11),
-      new Date(2020, 0),
-      new Date(2020, 1),
-      new Date(2020, 2)
-    ].map(d => d.getTime())
-    const formatter = getFormatter(ticks)
+```js
+const ticks = [
+  new Date(2018, 9),
+  new Date(2018, 10),
+  new Date(2018, 11),
+  new Date(2019, 0),
+  new Date(2019, 1),
+  new Date(2019, 2),
+  new Date(2019, 3),
+  new Date(2019, 10),
+  new Date(2019, 11),
+  new Date(2020, 0),
+  new Date(2020, 1),
+  new Date(2020, 2),
+].map(d => d.getTime())
+const formatter = getFormatter(ticks)
+```
 
-![monthly](https://raw.githubusercontent.com/ilariaventurini/time-format-ticks/master/assets/monthly.png?token=AKRICQOCS5E35PTQQB3F6F26P6PCO)
+![monthly](./assets/monthly.png?raw=true)
 
 #### monthly with custom Locale
 
-    const ticks = [
-      new Date(2018, 9),
-      new Date(2018, 10),
-      new Date(2018, 11),
-      new Date(2019, 0),
-      new Date(2019, 1),
-      new Date(2019, 2),
-      new Date(2019, 3),
-      new Date(2019, 10),
-      new Date(2019, 11),
-      new Date(2020, 0),
-      new Date(2020, 1),
-      new Date(2020, 2)
-    ].map(d => d.getTime())
-    const options = { localeObject: frLocaleObject }
-    const formatter = getFormatter(ticks, options)
+```js
+import frLocaleObject from 'date-fns/locale/fr/index'
 
-![monthly custom](https://raw.githubusercontent.com/ilariaventurini/time-format-ticks/master/assets/monthly%20custom.png?token=AKRICQOSDK6HYSIMYBI2YUK6P6PBS)
+const ticks = [
+  new Date(2018, 9),
+  new Date(2018, 10),
+  new Date(2018, 11),
+  new Date(2019, 0),
+  new Date(2019, 1),
+  new Date(2019, 2),
+  new Date(2019, 3),
+  new Date(2019, 10),
+  new Date(2019, 11),
+  new Date(2020, 0),
+  new Date(2020, 1),
+  new Date(2020, 2),
+].map(d => d.getTime())
+const options = { localeObject: frLocaleObject }
+const formatter = getFormatter(ticks, options)
+```
+
+![monthly custom](./assets/monthly-custom.png?raw=true)
 
 #### quarterly
 
-    const ticks = [
-      new Date(2017, 0),
-      new Date(2017, 3),
-      new Date(2017, 6),
-      new Date(2017, 9),
-      new Date(2018, 1),
-      new Date(2018, 4),
-      new Date(2018, 7),
-      new Date(2019, 0),
-      new Date(2019, 5),
-      new Date(2019, 7),
-      new Date(2019, 10),
-      new Date(2020, 0)
-    ].map(d => d.getTime())
-    const formatter = getFormatter(ticks)
+```js
+const ticks = [
+  new Date(2017, 0),
+  new Date(2017, 3),
+  new Date(2017, 6),
+  new Date(2017, 9),
+  new Date(2018, 1),
+  new Date(2018, 4),
+  new Date(2018, 7),
+  new Date(2019, 0),
+  new Date(2019, 5),
+  new Date(2019, 7),
+  new Date(2019, 10),
+  new Date(2020, 0),
+].map(d => d.getTime())
+const formatter = getFormatter(ticks)
+```
 
-![quarterly]()
+![quarterly](./assets/quarterly.png?raw=true)
 
 #### yearly
 
-    const ticks = [
-      new Date(1977, 0),
-      new Date(1978, 0),
-      new Date(1979, 0),
-      new Date(1980, 0),
-      new Date(1981, 0),
-      new Date(1982, 0),
-      new Date(1983, 0),
-      new Date(2015, 0),
-      new Date(2016, 0),
-      new Date(2017, 0),
-      new Date(2018, 0),
-      new Date(2019, 0)
-    ].map(d => d.getTime())
-    const formatter = getFormatter(ticks)
+```js
+const ticks = [
+  new Date(1977, 0),
+  new Date(1978, 0),
+  new Date(1979, 0),
+  new Date(1980, 0),
+  new Date(1981, 0),
+  new Date(1982, 0),
+  new Date(1983, 0),
+  new Date(2015, 0),
+  new Date(2016, 0),
+  new Date(2017, 0),
+  new Date(2018, 0),
+  new Date(2019, 0),
+].map(d => d.getTime())
+const formatter = getFormatter(ticks)
+```
 
-![yearly](https://raw.githubusercontent.com/ilariaventurini/time-format-ticks/master/assets/yearly.png?token=AKRICQJTULTLPGB3DZFOWTS6P6PFA)
+![yearly](./assets/yearly.png?raw=true)
 
 ## Demo page
 
@@ -416,21 +444,23 @@ Params are:
 - `ticks`: is an array of timestamps
 - `options` (_optional_): is an object with this structure, each attribute is optional:
 
-      {
-        showDayName: false,
-        localeObject: enUSLocaleObject,
-        formats: {
-          '15seconds': { primary: 'MMM d, pp', secondary: 'pp' },
-          'minute': { primary: 'MMM d, p', secondary: 'p' },
-          '30minutes': { primary: 'MMM d, p', secondary: 'p' },
-          'hourly': { primary: 'MMM d, hh a', secondary: 'hh a' },
-          'daily': { primary: 'MMM d', secondary: 'd' },
-          'weekly': { primary: 'eee, MMM d', secondary: 'eee' },
-          'monthly': { primary: 'MMM yyyy', secondary: 'MMM' },
-          'quarterly': { primary: `QQQ ''yy`, secondary: 'QQQ' },
-          'yearly': { primary: 'yyyy', secondary: 'yyyy' },
-        }
-      }
+```js
+{
+  showDayName: false,
+  localeObject: enUSLocaleObject,
+  formats: {
+    '15seconds': { primary: 'MMM d, pp', secondary: 'pp' },
+    'minute': { primary: 'MMM d, p', secondary: 'p' },
+    '30minutes': { primary: 'MMM d, p', secondary: 'p' },
+    'hourly': { primary: 'MMM d, hh a', secondary: 'hh a' },
+    'daily': { primary: 'MMM d', secondary: 'd' },
+    'weekly': { primary: 'eee, MMM d', secondary: 'eee' },
+    'monthly': { primary: 'MMM yyyy', secondary: 'MMM' },
+    'quarterly': { primary: `QQQ ''yy`, secondary: 'QQQ' },
+    'yearly': { primary: 'yyyy', secondary: 'yyyy' },
+  }
+}
+```
 
 #### `computeTimeIntervalName(ticks: Tick[]): TimeInterval)`
 
@@ -459,58 +489,63 @@ Params are:
 
 This function is useful if you want, for example, set a different style to primary and secondary ticks:
 
-![15secondsRed](https://raw.githubusercontent.com/ilariaventurini/time-format-ticks/master/assets/15secondsRed.png?token=AKRICQKCIZ4VE5X52OP5NPC6P6OHS)
+![15secondsRed](./assets/15seconds-red.png?raw=true)
 
 ## Example
 
-    // create an array of timestamps
-    const dates = [
-      new Date(2020, 11, 10, 23, 59, 15),
-      new Date(2020, 11, 10, 23, 59, 30),
-      new Date(2020, 11, 10, 23, 59, 45),
-      new Date(2020, 11, 11, 0, 0, 0),
-      new Date(2020, 11, 11, 0, 0, 15),
-      new Date(2020, 11, 11, 0, 0, 30),
-      new Date(2020, 11, 11, 0, 0, 45)]
+```js
+// create an array of timestamps
+const dates = [
+  new Date(2020, 11, 10, 23, 59, 15),
+  new Date(2020, 11, 10, 23, 59, 30),
+  new Date(2020, 11, 10, 23, 59, 45),
+  new Date(2020, 11, 11, 0, 0, 0),
+  new Date(2020, 11, 11, 0, 0, 15),
+  new Date(2020, 11, 11, 0, 0, 30),
+  new Date(2020, 11, 11, 0, 0, 45),
+]
 
-    // transform dates to timestamps
-    const ticks = dates.map(d => d.getTime())
+// transform dates to timestamps
+const ticks = dates.map(d => d.getTime())
 
-    // set width and height of your axis
-    const width = 800
-    const height = 100
-    const margins = { top: 10, right: 40, bottom: 0, left: 60 }
+// set width and height of your axis
+const width = 800
+const height = 100
+const margins = { top: 10, right: 40, bottom: 0, left: 60 }
 
-    // create the time scale
-    const domain = extent(dataset)
-    const range = [0, width - margins.left - margins.right]
-    const scale = scaleTime().domain(domain).range(range)
+// create the time scale
+const domain = extent(dataset)
+const range = [0, width - margins.left - margins.right]
+const scale = scaleTime()
+  .domain(domain)
+  .range(range)
 
-    // get the formatter
-    const formatter = getFormatter(ticks)
+// get the formatter
+const formatter = getFormatter(ticks)
 
-    // create the bottom axis generator
-    const axisGenerator = axisBottom(scale).tickFormat(formatter)
+// create the bottom axis generator
+const axisGenerator = axisBottom(scale).tickFormat(formatter)
 
-    // append axis to the DOM
-    const holder = select('#app')
-    holder
-      .append('svg')
-      .attr('width', width)
-      .attr('height', height)
-      .append('g')
-      .attr('transform', `translate(${margins.left}, ${margins.top})`)
-      .append('g')
-      .attr('width', width - margins.left - margins.right)
-      .attr('height', height - margins.top - margins.bottom)
-      .call(axisGenerator)
-      .selectAll('text')
-      .attr('transform', 'rotate(-45)')
-      .attr('text-anchor', 'end')
+// append axis to the DOM
+const holder = select('#app')
+holder
+  .append('svg')
+  .attr('width', width)
+  .attr('height', height)
+  .append('g')
+  .attr('transform', `translate(${margins.left}, ${margins.top})`)
+  .append('g')
+  .attr('width', width - margins.left - margins.right)
+  .attr('height', height - margins.top - margins.bottom)
+  .call(axisGenerator)
+  .selectAll('text')
+  .attr('transform', 'rotate(-45)')
+  .attr('text-anchor', 'end')
+```
 
 The result is:
 
-![15seconds](https://raw.githubusercontent.com/ilariaventurini/time-format-ticks/master/assets/15seconds.png?token=AKRICQPJFFTKFNYTN6VNIE26P52U6)
+![15seconds](./assets/15seconds.png?raw=true)
 
 ## License
 
@@ -521,4 +556,5 @@ The result is:
 - [ ] badge test
 - [ ] demo page / codesandbox / esempio stile isprimary tick
 - [ ] logo
+- [x] problema con merge di options! Vedi esemptio quarterly
 - [x] esempi con titolo e dati come testo non immagini -->
