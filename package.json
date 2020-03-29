@@ -1,9 +1,13 @@
 {
   "name": "time-format-ticks",
+  "description": "Format your time axis ticks in a pretty way",
   "version": "1.0.0",
-  "main": "dist/index.ts",
+  "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "repository": "https://github.com/ilariaventurini/time-format-ticks.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ilariaventurini/time-format-ticks.git"
+  },
   "author": {
     "name": "Ilaria Venturini",
     "email": "venturini.ila@gmail.com"
@@ -14,7 +18,10 @@
     "d3",
     "ticks",
     "time",
-    "axis"
+    "timeScale",
+    "date",
+    "axis",
+    "format"
   ],
   "files": [
     "dist/**/*"
@@ -30,7 +37,6 @@
     "lint": "tslint -p tsconfig.json",
     "prepublish": "rm -rf dist/ && tsc",
     "sanitize": "yarn format && yarn lint",
-    "clean": "rm dist/bundle.js",
     "start:demo": "parcel demo/index.html",
     "build": "parcel build demo/index.html"
   },
