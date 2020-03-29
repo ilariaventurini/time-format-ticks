@@ -10,8 +10,8 @@
 
 <p align="center">
   <!-- code coverage -->
-  <a href="https://www.npmjs.com/package/ohlala-theme">
-    <img alt="npm" src="https://img.shields.io/npm/v/ohlala-theme?style=flat-square&labelColor=1F2330&color=9B6DFF&">
+  <a href="https://codecov.io/gh/ilariaventurini/time-format-ticks">
+    <img alt="coverage" src="https://codecov.io/gh/ilariaventurini/time-format-ticks/branch/master/graph/badge.svg?token=Z1RP613QQC&style=flat-square">
   </a>
 </p>
 
@@ -568,10 +568,8 @@ A demo page is avaible, you can run it using `yarn start:demo`.
 
 [MIT](https://github.com/ilariaventurini/time-format-ticks/blob/master/LICENSE) © [Ilaria Venturini](https://github.com/ilariaventurini)
 
-<!-- ### TODO
-
-- [ ] badge test
-- [ ] demo page / codesandbox / esempio stile isprimary tick
-- [ ] logo
-- [x] problema con merge di options! Vedi esemptio quarterly
-- [x] esempi con titolo e dati come testo non immagini -->
+<!--
+TODO:
+- [ ] demo page
+- [ ] example for isPrimaryTick
+-->
