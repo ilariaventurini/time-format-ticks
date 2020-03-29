@@ -13,7 +13,7 @@
     "email": "venturini.ila@gmail.com"
   },
   "license": "MIT",
-  "private": true,
+  "private": false,
   "keywords": [
     "d3",
     "ticks",
