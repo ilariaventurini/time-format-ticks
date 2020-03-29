@@ -39,7 +39,7 @@ createExample(root, '30minutes', [
   new Date(2020, 11, 11, 1, 30),
 ])
 
-createExample(root, 'hourly-with-default-formats', [
+createExample(root, 'hourly with default formats', [
   new Date(2020, 11, 10, 22, 0),
   new Date(2020, 11, 10, 23, 0),
   new Date(2020, 11, 11, 0, 0),
@@ -54,7 +54,7 @@ createExample(root, 'hourly-with-default-formats', [
   new Date(2020, 11, 11, 15, 0),
 ])
 
-createExample(root, 'hourly-with-custom-formats', [
+createExample(root, 'hourly with custom formats', [
   new Date(2020, 11, 10, 22, 0),
   new Date(2020, 11, 10, 23, 0),
   new Date(2020, 11, 11, 0, 0),
@@ -103,7 +103,7 @@ createExample(root, 'weekly', [
   new Date(2020, 1, 7),
 ], { showDayName: true })
 
-createExample(root, 'monthly-with-default-formats', [
+createExample(root, 'monthly with default formats', [
   new Date(2018, 9),
   new Date(2018, 10),
   new Date(2018, 11),
@@ -118,7 +118,7 @@ createExample(root, 'monthly-with-default-formats', [
   new Date(2020, 2),
 ])
 
-createExample(root, 'monthly-with-custom-formats', [
+createExample(root, 'monthly with custom formats', [
   new Date(2018, 9),
   new Date(2018, 10),
   new Date(2018, 11),
@@ -130,7 +130,7 @@ createExample(root, 'monthly-with-custom-formats', [
   new Date(2019, 11),
   new Date(2020, 0),
   new Date(2020, 1),
-  new Date(2020, 2),
+  new Date(2020, 2)
 ], { localeObject: frLocaleObject })
 
 createExample(root, 'quarterly', [
@@ -145,7 +145,7 @@ createExample(root, 'quarterly', [
   new Date(2019, 5),
   new Date(2019, 7),
   new Date(2019, 10),
-  new Date(2020, 0),
+  new Date(2020, 0)
 ])
 
 createExample(root, 'yearly', [
