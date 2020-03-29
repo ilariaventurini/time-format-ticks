@@ -1,13 +1,30 @@
-# Time format ticks
+<div align="center" style="text-align: center;">
 
-Given a list of timestamps, it recognizes the time interval necessary to represent the dates (_15 seconds_, _minute_, _30 minutes_, _hourly_, _daily_, _weekly_, _monthly_, _quarterly_ or _yearly_) and formats the ticks accordingly.
+  <h1>Time format ticks</h1>
 
-Two possible formats (_primary_ and _secondary_) are associated with each time interval which can be used to format the current tick.
+  <!-- ![logo](./assets/logo.png) -->
+
+📊 Format your time axis ticks in a pretty way.
+
+</div>
+
+<p align="center">
+  <!-- code coverage -->
+  <a href="https://www.npmjs.com/package/ohlala-theme">
+    <img alt="npm" src="https://img.shields.io/npm/v/ohlala-theme?style=flat-square&labelColor=1F2330&color=9B6DFF&">
+  </a>
+</p>
+
+---
+
+Given a list of timestamps, it recognizes the time interval necessary to represent the dates (`15 seconds`, `minute`, `30 minutes`, `hourly`, `daily`, `weekly`, `monthly`, `quarterly` or `yearly`) and formats the ticks accordingly.
+
+Two possible formats (_primary_ and _secondary_) are associated with each time interval which can be used to format the current tick.\
 _Primary_ format was designed to represent the value (the date corresponding to the tick) in a more exhaustive and detailed way, while the _secondary_ format represents the value in a concise way.\
 _Primary_ tick format is used for the first tick and when something happens between the last and the current ticks based on the time interval.
 
-For example if time interval is _daily_, I'm probably interested to see a primary tick on the first tick and every time a ticks rapresents a date which month or year is changed respet to the previous tick.
-The remaining ticks are formatted using the _secondary_ format.
+For example if time interval is `daily`, I'm probably interested to see a _primary_ tick on the first tick and every time a ticks rapresents a date which month or year is changed respet to the previous tick.
+The remaining ticks are formatted using the `secondary` format.
 
 So I can describe this logic using this schema:
 
@@ -23,8 +40,8 @@ So I can describe this logic using this schema:
         * otherwise
 
 What does it mean?\
-Exactly the same described above: if time interval is _daily_, the primary format tick is `MMM d`, the secondary format tick is `d` so the primary tick actually describes the date more precisely because it shows the month and day, while the secondary format tick shows only the day.\
-The primary format tick is used on the first tick and when there is a change of month or year, in all the other cases it's being used the secondary format tick.
+Exactly the same described above: if time interval is `daily`, the _primary_ format tick is `MMM d`, the _secondary_ format tick is `d` so the _primary_ tick actually describes the date more precisely because it shows the month and day, while the _secondary_ format tick shows only the day.\
+The _primary_ format tick is used on the first tick and when there is a change of month or year, in all the other cases it's being used the _secondary_ format tick.
 
 Below there is a short diagram on how ticks are formatted:
 
@@ -127,9 +144,9 @@ Below there is a short diagram on how ticks are formatted:
       secondary:
         * otherwise
 
-**Note**: as you can see in the above diagram, the _weekly_ time interval doesn't exist. It works as _daily_ but it shows the day names instead of the day numbers and user can choose the format using the `showDayName` option.
+**Note**: as you can see in the above diagram, the `weekly` time interval doesn't exist. It works as `daily` but it shows the day names instead of the day numbers and user can choose the format using the `showDayName` option.
 
-**Note**: if the dataset has only one datum, we show the tick in the most detailed way possible using _15 seconds_ time interval.
+**Note**: if the dataset has only one datum, we show the tick in the most detailed way possible using `15 seconds` time interval.
 
 Where:
 
@@ -144,12 +161,12 @@ Where:
 - `yy`: calendar year (ie. _10, 17_)
 - `QQQ`: quarter (ie. _Q1, ..., Q4_).
 
-`primary` and `secondary` specify the format of the formatted tick. The format of this string is based on [Unicode Technical Standard #35](https://www.unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table).\
+_primary_ and _secondary_ specify the format of the formatted tick. The format of this string is based on [Unicode Technical Standard #35](https://www.unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table).\
 More info on the [`date-fns` documentation](https://date-fns.org/v2.8.1/docs/format).
 
-## Customization
+## 🐟 Customization
 
-You can customize both the primary and the secondary format. You can also, as said before, chose to show the day as number or as day name. Also, you can change the Locale.
+You can customize both the _primary_ and the _secondary_ format. You can also, as said before, chose to show the day as number or as day name. Also, you can change the Locale.
 All of those things are possible using the `Options` object.
 
 ### Change the formats
@@ -164,7 +181,7 @@ const options = {
 }
 ```
 
-If you prefer to show years as 2-digit instead of 4 for _yearly_ time interval:
+If you prefer to show years as 2-digit instead of 4-digit for _yearly_ time interval:
 
 ```js
 const options = {
@@ -182,7 +199,7 @@ If you prefer to show day as day name instead of day number, you can set the `sh
 
 ### Change Locale
 
-Default locale is _english-US_ but the user can choose the one he prefers. The available locale objects are those supported by `date-fns`.\
+Default locale is `english-US` but the user can choose the one he prefers. The available locale objects are those supported by `date-fns`.\
 [Here](https://github.com/date-fns/date-fns/tree/master/src/locale) is the list.
 
 Basically by changing the locale only the language of the labels change.
@@ -190,7 +207,7 @@ To change the formats of the labels according to a locale the only possibility i
 
 Each option value is optional.
 
-## Screenshots
+## 📷 Screenshots
 
 #### 15seconds
 
@@ -428,11 +445,7 @@ const formatter = getFormatter(ticks)
 
 ![yearly](./assets/yearly.png?raw=true)
 
-## Demo page
-
-A demo page is avaible, you can run it using `yarn start:demo`.
-
-## API
+## 🐝 API
 
 #### `getFormatter(ticks: Tick[], options?: Options): Formatter`
 
@@ -487,11 +500,11 @@ Params are:
 - `interval: TimeInterval`: the time insterval that suits your data
 - `showDayName: boolean`: if interval is `daily`, you can set `showDayName` as `true` if you want to show days as string, `false` otherwise. In all the other cases, doesn't matter what the value of this variable is. Probably I'll work on it.
 
-This function is useful if you want, for example, set a different style to primary and secondary ticks:
+This function is useful if you want, for example, set a different style to _primary_ and _secondary_ ticks:
 
 ![15secondsRed](./assets/15seconds-red.png?raw=true)
 
-## Example
+## 🦶 Example
 
 ```js
 // create an array of timestamps
@@ -546,6 +559,10 @@ holder
 The result is:
 
 ![15seconds](./assets/15seconds.png?raw=true)
+
+## 🙈 Demo page
+
+A demo page is avaible, you can run it using `yarn start:demo`.
 
 ## License
 
