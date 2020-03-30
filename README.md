@@ -521,6 +521,12 @@ Params are:
 ## 🦶 Example
 
 ```js
+import { extent } from "d3-array";
+import { scaleTime } from "d3-scale";
+import { axisBottom } from "d3-axis";
+import { select } from "d3-selection";
+import { getFormatter } from "time-format-ticks";
+
 // create an array of timestamps
 const dates = [
   new Date(2020, 11, 10, 23, 59, 15),
@@ -533,20 +539,25 @@ const dates = [
 ]
 // transform dates to timestamps
 const ticks = dates.map(d => d.getTime())
+
 // set width and height of your axis
 const width = 800
 const height = 100
 const margins = { top: 10, right: 40, bottom: 0, left: 60 }
+
 // create the time scale
-const domain = extent(dataset)
+const domain = extent(ticks)
 const range = [0, width - margins.left - margins.right]
 const scale = scaleTime()
   .domain(domain)
   .range(range)
+  
 // get the formatter
 const formatter = getFormatter(ticks)
+
 // create the bottom axis generator
 const axisGenerator = axisBottom(scale).tickFormat(formatter)
+
 // append axis to the DOM
 const holder = select('#app')
 holder
