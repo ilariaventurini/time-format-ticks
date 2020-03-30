@@ -2,9 +2,7 @@
 
   <h1>Time format ticks</h1>
 
-  <!-- ![logo](./assets/logo.png) -->
-
-📊 Format your time axis ticks in a pretty way.
+  📊 Format your time axis ticks in a pretty way.
 
 </div>
 
@@ -195,8 +193,8 @@ If you prefer to show hours using 24h and not 12h as default, you can descbribe 
 ```js
 const options = {
   formats: {
-    hourly: { primary: 'MMM d, HH:mm', secondary: 'HH:mm' },
-  },
+    hourly: { primary: 'MMM d, HH:mm', secondary: 'HH:mm' }
+  }
 }
 ```
 
@@ -205,8 +203,8 @@ If you prefer to show years as 2-digit instead of 4-digit for _yearly_ time inte
 ```js
 const options = {
   formats: {
-    yearly: { primary: 'yy', secondary: 'yy' },
-  },
+    yearly: { primary: 'yy', secondary: 'yy' }
+  }
 }
 ```
 
@@ -241,7 +239,7 @@ const ticks = [
   new Date(2020, 11, 11, 0, 0, 0),
   new Date(2020, 11, 11, 0, 0, 15),
   new Date(2020, 11, 11, 0, 0, 30),
-  new Date(2020, 11, 11, 0, 0, 45),
+  new Date(2020, 11, 11, 0, 0, 45)
 ].map(d => d.getTime())
 const formatter = getFormatter(ticks)
 ```
@@ -263,7 +261,7 @@ const ticks = [
   new Date(2020, 4, 22, 11, 59, 0),
   new Date(2020, 4, 22, 12, 0, 0),
   new Date(2020, 4, 22, 12, 1, 0, 0),
-  new Date(2020, 4, 22, 12, 2, 0),
+  new Date(2020, 4, 22, 12, 2, 0)
 ].map(d => d.getTime())
 const formatter = getFormatter(ticks)
 ```
@@ -280,7 +278,7 @@ const ticks = [
   new Date(2020, 11, 11, 0, 0),
   new Date(2020, 11, 11, 0, 30),
   new Date(2020, 11, 11, 1, 0),
-  new Date(2020, 11, 11, 1, 30),
+  new Date(2020, 11, 11, 1, 30)
 ].map(d => d.getTime())
 const formatter = getFormatter(ticks)
 ```
@@ -302,7 +300,7 @@ const ticks = [
   new Date(2020, 11, 11, 12, 0),
   new Date(2020, 11, 11, 13, 0),
   new Date(2020, 11, 11, 14, 0),
-  new Date(2020, 11, 11, 15, 0),
+  new Date(2020, 11, 11, 15, 0)
 ].map(d => d.getTime())
 const formatter = getFormatter(ticks)
 ```
@@ -347,7 +345,7 @@ const ticks = [
   new Date(2020, 0, 31),
   new Date(2020, 1, 1),
   new Date(2020, 1, 2),
-  new Date(2020, 1, 3),
+  new Date(2020, 1, 3)
 ].map(d => d.getTime())
 const formatter = getFormatter(ticks)
 ```
@@ -369,9 +367,10 @@ const ticks = [
   new Date(2020, 1, 4),
   new Date(2020, 1, 5),
   new Date(2020, 1, 6),
-  new Date(2020, 1, 7),
+  new Date(2020, 1, 7)
 ].map(d => d.getTime())
-const formatter = getFormatter(ticks)
+const options = { showDayName: true }
+const formatter = getFormatter(ticks, options)
 ```
 
 ![weekly](./assets/weekly.png?raw=true)
@@ -391,7 +390,7 @@ const ticks = [
   new Date(2019, 11),
   new Date(2020, 0),
   new Date(2020, 1),
-  new Date(2020, 2),
+  new Date(2020, 2)
 ].map(d => d.getTime())
 const formatter = getFormatter(ticks)
 ```
@@ -414,7 +413,7 @@ const ticks = [
   new Date(2019, 11),
   new Date(2020, 0),
   new Date(2020, 1),
-  new Date(2020, 2),
+  new Date(2020, 2)
 ].map(d => d.getTime())
 const options = { localeObject: frLocaleObject }
 const formatter = getFormatter(ticks, options)
@@ -437,7 +436,7 @@ const ticks = [
   new Date(2019, 5),
   new Date(2019, 7),
   new Date(2019, 10),
-  new Date(2020, 0),
+  new Date(2020, 0)
 ].map(d => d.getTime())
 const formatter = getFormatter(ticks)
 ```
@@ -459,7 +458,7 @@ const ticks = [
   new Date(2016, 0),
   new Date(2017, 0),
   new Date(2018, 0),
-  new Date(2019, 0),
+  new Date(2019, 0)
 ].map(d => d.getTime())
 const formatter = getFormatter(ticks)
 ```
@@ -490,7 +489,7 @@ Params are:
     'weekly': { primary: 'eee, MMM d', secondary: 'eee' },
     'monthly': { primary: 'MMM yyyy', secondary: 'MMM' },
     'quarterly': { primary: `QQQ ''yy`, secondary: 'QQQ' },
-    'yearly': { primary: 'yyyy', secondary: 'yyyy' },
+    'yearly': { primary: 'yyyy', secondary: 'yyyy' }
   }
 }
 ```
