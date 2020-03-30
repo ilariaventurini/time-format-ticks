@@ -9,6 +9,12 @@
 </div>
 
 <p align="center">
+  <!-- npm version -->
+  <a href="https://www.npmjs.com/package/time-format-ticks">
+    <img alt="npm"
+      src="https://img.shields.io/npm/v/time-format-ticks">
+  </a>
+
   <!-- code coverage -->
   <a href="https://codecov.io/gh/ilariaventurini/time-format-ticks">
     <img alt="coverage"
@@ -521,11 +527,11 @@ Params are:
 ## 🦶 Example
 
 ```js
-import { extent } from "d3-array";
-import { scaleTime } from "d3-scale";
-import { axisBottom } from "d3-axis";
-import { select } from "d3-selection";
-import { getFormatter } from "time-format-ticks";
+import { extent } from 'd3-array'
+import { scaleTime } from 'd3-scale'
+import { axisBottom } from 'd3-axis'
+import { select } from 'd3-selection'
+import { getFormatter } from 'time-format-ticks'
 
 // create an array of timestamps
 const dates = [
@@ -535,7 +541,7 @@ const dates = [
   new Date(2020, 11, 11, 0, 0, 0),
   new Date(2020, 11, 11, 0, 0, 15),
   new Date(2020, 11, 11, 0, 0, 30),
-  new Date(2020, 11, 11, 0, 0, 45),
+  new Date(2020, 11, 11, 0, 0, 45)
 ]
 // transform dates to timestamps
 const ticks = dates.map(d => d.getTime())
