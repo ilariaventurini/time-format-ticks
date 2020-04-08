@@ -600,7 +600,7 @@ The result is:
 
 ## 🙈 Demo page
 
-A demo page is avaible [here](https://time-format-ticks.netlify.com/).
+A demo page is available [here](https://time-format-ticks.netlify.com/).
 
 ## License
 
@@ -609,6 +609,5 @@ Venturini](https://github.com/ilariaventurini)
 
 <!--
 TODO:
-- [ ] demo page
 - [ ] example for isPrimaryTick
 -->
