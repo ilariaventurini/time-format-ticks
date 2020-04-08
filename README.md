@@ -2,7 +2,8 @@
 
   <h1>Time format ticks</h1>
 
-  📊 Format your time axis ticks in a pretty way.
+  📊 Format your time axis ticks in a pretty way\
+  A little bit very horrible [demo page](https://time-format-ticks.netlify.com/)
 
 </div>
 
@@ -21,6 +22,20 @@
 </p>
 
 ---
+
+## ⚙️ Installing
+
+```bash
+yarn add time-format-ticks
+```
+
+or
+
+```bash
+npm install time-format-ticks --save
+```
+
+## 📊 Description
 
 Given a list of timestamps, it recognizes the time interval necessary to represent the dates (`15 seconds`, `minute`,
 `30 minutes`, `hourly`, `daily`, `weekly`, `monthly`, `quarterly` or `yearly`) and formats the ticks accordingly.
@@ -585,7 +600,7 @@ The result is:
 
 ## 🙈 Demo page
 
-A demo page is avaible, you can run it using `yarn start:demo`.
+A demo page is avaible [here](https://time-format-ticks.netlify.com/).
 
 ## License
 
