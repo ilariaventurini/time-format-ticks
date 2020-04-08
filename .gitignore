@@ -9,3 +9,9 @@ coverage/
 
 # npm and yarn log
 *.log
+
+# build
+demo-build/
+
+# dist
+dist/
