@@ -18,12 +18,13 @@ function getConsecutiveDifferences(elements: Tick[]): number[] {
   return elements.slice(1).map((elem, i) => elem - elements[i])
 }
 
-// Given a number, return the closest TIME_INTERVAL name
-function closestTimeIntervalName(minDifferenceMs: number): TimeInterval {
-  const index = TIME_INTERVALS.reduce((acc, [timeIntName, timeIntMs], i) => {
-    const previousSpan = Math.abs(acc - minDifferenceMs)
-    const currentSpan = Math.abs(timeIntMs - minDifferenceMs)
-    return previousSpan < currentSpan ? acc : i
+// Given a duration in ms, return the closest TIME_INTERVAL name
+function closestTimeIntervalName(duration: number): TimeInterval {
+  const index = TIME_INTERVALS.reduce((nearestIndex, [intervalName, delta], i) => {
+    const deltaNearest = TIME_INTERVALS[nearestIndex][1]
+    const oldNearestSpan = Math.abs(deltaNearest - duration)
+    const currentSpan = Math.abs(delta - duration)
+    return oldNearestSpan < currentSpan ? nearestIndex : i
   }, 0)
   return TIME_INTERVALS[index][0]
 }
