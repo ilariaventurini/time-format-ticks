@@ -1,4 +1,4 @@
-export type Formatter = ((t: number, i: number) => string)
+export type Formatter = (t: number, i: number) => string
 
 // TODO: add date[]
 export type Tick = number
@@ -11,14 +11,14 @@ export interface Options {
 }
 export interface Formats {
   '15seconds'?: TickFormats
-  'minute'?: TickFormats
+  minute?: TickFormats
   '30minutes'?: TickFormats
-  'hourly'?: TickFormats
-  'daily'?: TickFormats
-  'weekly'?: TickFormats
-  'monthly'?: TickFormats
-  'quarterly'?: TickFormats
-  'yearly'?: TickFormats
+  hourly?: TickFormats
+  daily?: TickFormats
+  weekly?: TickFormats
+  monthly?: TickFormats
+  quarterly?: TickFormats
+  yearly?: TickFormats
 }
 export interface TickFormats {
   primary?: string

@@ -3,36 +3,59 @@ import { get } from 'lodash'
 import { format } from 'date-fns'
 
 // Return the formatted current tick
-export function formatTick(tick: Tick, tickIndex: number, interval: TimeInterval, options: Required<Options>): FormattedTick {
+export function formatTick(
+  tick: Tick,
+  tickIndex: number,
+  interval: TimeInterval,
+  options: Required<Options>
+): FormattedTick {
   const { showDayName, localeObject, formats } = options
   // this is necessary because weekly is not a really time interval, is only a way to show day
-  const intervalConsideringAlsoShowDayNameOption = interval === 'daily' && showDayName ? 'weekly' : interval
+  const intervalConsideringAlsoShowDayNameOption =
+    interval === 'daily' && showDayName ? 'weekly' : interval
   const tickFormats: Required<TickFormats> = get(formats, intervalConsideringAlsoShowDayNameOption)
-  const formatString = isTickPrimary(tick, tickIndex, interval, showDayName) ? tickFormats.primary : tickFormats.secondary
+  const formatString = isTickPrimary(tick, tickIndex, interval, showDayName)
+    ? tickFormats.primary
+    : tickFormats.secondary
   return format(new Date(tick), formatString, { locale: localeObject })
 }
 
 // Return true if the tick is a primary tick, false otherwise
-export function isTickPrimary(tick: Tick, tickIndex: number, interval: TimeInterval, showDayName: boolean): boolean {
+export function isTickPrimary(
+  tick: Tick,
+  tickIndex: number,
+  interval: TimeInterval,
+  showDayName: boolean
+): boolean {
   const isFirstTick = tickIndex === 0
-  const hasANewWeekStarted = Number(format((new Date(tick)), 'c')) === 2
-  const isFirstQuarter = Number(format((new Date(tick)), 'q')) === 1
+  const hasANewWeekStarted = Number(format(new Date(tick), 'c')) === 2
+  const isFirstQuarter = Number(format(new Date(tick), 'q')) === 1
 
   switch (interval) {
-    case '15seconds': return (isFirstTick || isDayOfMonthChanged(tick) || isMonthChanged(tick) || isYearChanged(tick))
-    case 'minute': return (isFirstTick || isDayOfMonthChanged(tick) || isMonthChanged(tick) || isYearChanged(tick))
-    case '30minutes': return (isFirstTick || isDayOfMonthChanged(tick) || isMonthChanged(tick) || isYearChanged(tick))
-    case 'hourly': return (isFirstTick || isDayOfMonthChanged(tick) || isMonthChanged(tick) || isYearChanged(tick))
+    case '15seconds':
+      return isFirstTick || isDayOfMonthChanged(tick) || isMonthChanged(tick) || isYearChanged(tick)
+    case 'minute':
+      return isFirstTick || isDayOfMonthChanged(tick) || isMonthChanged(tick) || isYearChanged(tick)
+    case '30minutes':
+      return isFirstTick || isDayOfMonthChanged(tick) || isMonthChanged(tick) || isYearChanged(tick)
+    case 'hourly':
+      return isFirstTick || isDayOfMonthChanged(tick) || isMonthChanged(tick) || isYearChanged(tick)
     case 'daily':
-      if (!showDayName) { // daily
-        return (isFirstTick || isMonthChanged(tick) || isYearChanged(tick))
-      } else { // weekly
-        return (isFirstTick || hasANewWeekStarted || isYearChanged(tick))
+      if (!showDayName) {
+        // daily
+        return isFirstTick || isMonthChanged(tick) || isYearChanged(tick)
+      } else {
+        // weekly
+        return isFirstTick || hasANewWeekStarted || isYearChanged(tick)
       }
-    case 'monthly': return (isFirstTick || isYearChanged(tick))
-    case 'quarterly': return (isFirstTick || isFirstQuarter)
-    case 'yearly': return false
-    default: throw new Error(`${interval} is not a valid time interval.`)
+    case 'monthly':
+      return isFirstTick || isYearChanged(tick)
+    case 'quarterly':
+      return isFirstTick || isFirstQuarter
+    case 'yearly':
+      return false
+    default:
+      throw new Error(`${interval} is not a valid time interval.`)
   }
 }
 

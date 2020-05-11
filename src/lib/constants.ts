@@ -13,7 +13,7 @@ export const TIME_INTERVALS: TimeInterval = [
   ['daily', 24 * 60 * 60 * 1000],
   ['monthly', 30 * 24 * 60 * 60 * 1000],
   ['quarterly', 3 * 30 * 24 * 60 * 60 * 1000],
-  ['yearly', 12 * 30 * 24 * 60 * 60 * 1000]
+  ['yearly', 12 * 30 * 24 * 60 * 60 * 1000],
 ]
 
 export const defaultOptions: Required<Options> = {
@@ -21,13 +21,13 @@ export const defaultOptions: Required<Options> = {
   localeObject: enUSLocaleObject,
   formats: {
     '15seconds': { primary: 'MMM d, pp', secondary: 'pp' },
-    'minute': { primary: 'MMM d, p', secondary: 'p' },
+    minute: { primary: 'MMM d, p', secondary: 'p' },
     '30minutes': { primary: 'MMM d, p', secondary: 'p' },
-    'hourly': { primary: 'MMM d, hh a', secondary: 'hh a' },
-    'daily': { primary: 'MMM d', secondary: 'd' },
-    'weekly': { primary: 'eee, MMM d', secondary: 'eee' },
-    'monthly': { primary: 'MMM yyyy', secondary: 'MMM' },
-    'quarterly': { primary: `QQQ ''yy`, secondary: 'QQQ' },
-    'yearly': { primary: 'yyyy', secondary: 'yyyy' },
-  }
+    hourly: { primary: 'MMM d, hh a', secondary: 'hh a' },
+    daily: { primary: 'MMM d', secondary: 'd' },
+    weekly: { primary: 'eee, MMM d', secondary: 'eee' },
+    monthly: { primary: 'MMM yyyy', secondary: 'MMM' },
+    quarterly: { primary: `QQQ ''yy`, secondary: 'QQQ' },
+    yearly: { primary: 'yyyy', secondary: 'yyyy' },
+  },
 }
