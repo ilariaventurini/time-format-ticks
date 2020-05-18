@@ -607,7 +607,8 @@ A demo page is available [here](https://time-format-ticks.netlify.com/).
 [MIT](https://github.com/ilariaventurini/time-format-ticks/blob/master/LICENSE) © [Ilaria
 Venturini](https://github.com/ilariaventurini)
 
-<!--
-TODO:
-- [ ] example for isPrimaryTick
--->
+## 📝 TODO
+
+- [ ] example for `isPrimaryTick`
+- [ ] use `dayjs` instead of `date-fns`
+- [ ] use `Date` objects instead of timestamps
